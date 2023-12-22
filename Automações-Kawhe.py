@@ -5,6 +5,8 @@ import tkinter.font as tkFont
 import pyautogui
 from time import sleep
 
+print("opa")
+
 def verificar_cor_e_clicar(cor,  x,  y):
     # Captura a cor do pixel nas coordenadas (x,  y)
     pixel_color = pyautogui.pixel(x,  y)
