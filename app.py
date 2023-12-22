@@ -197,7 +197,7 @@ Buton_FNC2["cursor"] = "target"
 Label_Line_Nome=tk.Label(janela)
 Label_Line_Nome["font"] = tkFont.Font(family='Arial',size=10)
 Label_Line_Nome["bg"] = "black"
-Label_Line_Nome.place(x=0,y=410,width=600,height=2)
+Label_Line_Nome.place(x=0,y=370,width=600,height=2)
 # Separação ---------------------------------------------------
 
 janela.mainloop()
