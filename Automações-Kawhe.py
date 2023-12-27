@@ -5,20 +5,33 @@ import tkinter.font as tkFont
 import pyautogui
 from time import sleep
 
-print("opa")
+def Abrir_Plannix():
+    pyautogui.press('win', presses=3)
+    pyautogui.write("Plannix")
+    sleep(0.2)
+    pyautogui.press('enter', presses=2)
+    
+Abrir_Plannix()
 
 def verificar_cor_e_clicar(cor,  x,  y):
     # Captura a cor do pixel nas coordenadas (x,  y)
     pixel_color = pyautogui.pixel(x,  y)
-
     # Verifica se a cor do pixel é igual à cor desejada
     if pixel_color == cor:
-        # Se for,  clica no pixel
         pyautogui.click(x,  y,  duration=0.1)
-        x_2 = x + 44
-        pyautogui.click(x_2, 940,  duration=0.2)
-        # print(f"Clicou no pixel ({x},  {y}) - Cor encontrada - Cor: {pixel_color}")
-        return True
+        Cor1 = pyautogui.pixel(738, 595)
+        Cor2 = pyautogui.pixel(835, 594)
+        Cor3 = pyautogui.pixel(937, 595)
+        Cor4 = pyautogui.pixel(1039, 592)
+        Cor5 = pyautogui.pixel(1138, 594)
+        Cor6 = pyautogui.pixel(1237, 595)
+        if Cor1 == (19, 50, 106) | Cor2 == (63,19,92) | Cor3 == (124,24,24) | Cor4 == (207,104,0) | Cor5 == (100,143,45) | Cor6 == (215,162,20):
+            x_2 = x + 44
+            pyautogui.click(x_2, 940,  duration=0.2)
+            return True
+        else:
+            return False
+
     else:
         # print(f"Pixel ({x},  {y}) - Cor não encontrada - Cor: {pixel_color}")
         return False
@@ -29,9 +42,10 @@ def execute_function1():
     qt = int(qt_str) if qt_str.isdigit() else 0
 
     if qt > 0:
+        
         x_inicial = 308
         y = 1056
-
+        
         # Cor desejada
         cor_desejada = (35,  86,  141)
 
@@ -68,12 +82,13 @@ def execute_function1():
                 pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o mes
                 pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o dia
                 pyautogui.click(1617,  228,  duration=0.1)  # salva o coeficiente
-                
+          
                 qt -= 1
                 sleep(35)
                 pyautogui.click(1204,  645,  duration=0.1)  # clica em ok no erro
                 if qt <= 0:
                     break
+        
     else:
         return  
     
