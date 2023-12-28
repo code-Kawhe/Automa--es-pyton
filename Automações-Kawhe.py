@@ -1,17 +1,11 @@
 import tkinter as tk
 from tkinter import *
 import tkinter.font as tkFont
+import psutil
 
 import pyautogui
 from time import sleep
 
-def Abrir_Plannix():
-    pyautogui.press('win', presses=3)
-    pyautogui.write("Plannix")
-    sleep(0.2)
-    pyautogui.press('enter', presses=2)
-    
-Abrir_Plannix()
 
 def verificar_cor_e_clicar(cor,  x,  y):
     # Captura a cor do pixel nas coordenadas (x,  y)
@@ -19,19 +13,9 @@ def verificar_cor_e_clicar(cor,  x,  y):
     # Verifica se a cor do pixel é igual à cor desejada
     if pixel_color == cor:
         pyautogui.click(x,  y,  duration=0.1)
-        Cor1 = pyautogui.pixel(738, 595)
-        Cor2 = pyautogui.pixel(835, 594)
-        Cor3 = pyautogui.pixel(937, 595)
-        Cor4 = pyautogui.pixel(1039, 592)
-        Cor5 = pyautogui.pixel(1138, 594)
-        Cor6 = pyautogui.pixel(1237, 595)
-        if Cor1 == (19, 50, 106) | Cor2 == (63,19,92) | Cor3 == (124,24,24) | Cor4 == (207,104,0) | Cor5 == (100,143,45) | Cor6 == (215,162,20):
-            x_2 = x + 44
-            pyautogui.click(x_2, 940,  duration=0.2)
-            return True
-        else:
-            return False
-
+        x_2 = x + 44
+        pyautogui.click(x_2, 940,  duration=0.2)
+        return True
     else:
         # print(f"Pixel ({x},  {y}) - Cor não encontrada - Cor: {pixel_color}")
         return False
