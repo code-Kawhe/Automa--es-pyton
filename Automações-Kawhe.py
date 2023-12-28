@@ -13,8 +13,6 @@ def verificar_cor_e_clicar(cor,  x,  y):
     # Verifica se a cor do pixel é igual à cor desejada
     if pixel_color == cor:
         pyautogui.click(x,  y,  duration=0.1)
-        x_2 = x + 44
-        pyautogui.click(x_2, 940,  duration=0.2)
         return True
     else:
         # print(f"Pixel ({x},  {y}) - Cor não encontrada - Cor: {pixel_color}")
@@ -37,7 +35,7 @@ def execute_function1():
         distancia_entre_pixels = 44
         
         # Número de pixels a verificar
-        num_pixels = 25
+        num_pixels = 30 
         
         for i in range(num_pixels):
             x_atual = x_inicial + i * distancia_entre_pixels
@@ -45,33 +43,52 @@ def execute_function1():
             if verificar_cor_e_clicar(cor_desejada,  x_atual,  y):
                 # Aguarda um curto período para evitar cliques muito rápidos
                 sleep(0.1)
-                
-        pyautogui.click(917,  638,  duration=0.1)
-        sleep(5)
-        pyautogui.click(345,  635,  duration=0.1)
-        sleep(5)
-        pyautogui.click(194,  83,  duration=0.1)
-        sleep(5)
-        while qt > 0:
-                pyautogui.click(71,  316,  duration=0.1)  # clica no item
-                pyautogui.click(65,  61,  duration=0.1)  # clica para adicionar o coeficiente
-                pyautogui.click(1546,  224,  duration=0.1)  # clica no campo de coeficiente
-                pyautogui.write("1")  # escreve o coeficiente
-                pyautogui.click(1509,  223,  duration=0.1)  # clica abrir o calendario
-                pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar o mes
-                pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar o ano
-                pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar um pouco mais o ano
-                pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona um par de ano
-                pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona mais um par de ano
-                pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o mes
-                pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o dia
-                pyautogui.click(1617,  228,  duration=0.1)  # salva o coeficiente
-          
-                qt -= 1
-                sleep(35)
-                pyautogui.click(1204,  645,  duration=0.1)  # clica em ok no erro
-                if qt <= 0:
-                    break
+            
+        if pyautogui.pixel(1763, 81) == (0, 34, 74) and pyautogui.pixel(1814, 966) == (0, 42, 90) and pyautogui.pixel(106, 979) == (0, 43, 91) and pyautogui.pixel(109, 95) == (0, 28, 61):
+            # sleep(0.5)
+            # if pyautogui.pixel(845, 885) != (255, 255, 255):
+            pyautogui.click(917,  638,  duration=0.1)
+            sleep(5)
+            pyautogui.click(345,  635,  duration=0.1)
+            sleep(5)
+            pyautogui.click(194,  83,  duration=0.1)
+            sleep(5)
+            while qt > 0:
+                    pyautogui.click(71,  316,  duration=0.1)  # clica no item
+                    pyautogui.click(65,  61,  duration=0.1)  # clica para adicionar o coeficiente
+                    pyautogui.click(1546,  224,  duration=0.1)  # clica no campo de coeficiente
+                    pyautogui.write("1")  # escreve o coeficiente
+                    pyautogui.click(1509,  223,  duration=0.1)  # clica abrir o calendario
+                    pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar o mes
+                    pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar o ano84167186
+                    pyautogui.click(1548,  251,  duration=0.1)  # clica para mudar um pouco mais o ano
+                    pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona um par de ano
+                    pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona mais um par de ano
+                    pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o mes
+                    pyautogui.click(1631,  352,  duration=0.1)  # clica seleciona o dia
+                    pyautogui.click(1617,  228,  duration=0.1)  # salva o coeficiente
+            
+                    qt -= 1
+                    sleep(35)
+                    pyautogui.click(1204,  645,  duration=0.1)  # clica em ok no erro
+                    if qt <= 0:
+                        break
+            # else:
+            #     for i in range(num_pixels):
+            #         x_atual = x_inicial + i * distancia_entre_pixels
+            #         # Verifica se a cor é a desejada e clica se for84167186
+            #         if verificar_cor_e_clicar(cor_desejada,  x_atual,  y):
+            #             # Aguarda um curto período para evitar cliques muito rápidos
+            #             pyautogui.click(x_atual+188, 887)
+            #             sleep(0.1)
+
+        else:
+            sleep(1)
+            pyautogui.click(857, 488)
+            pyautogui.write("84167186")
+            pyautogui.press("enter", presses=2)
+            sleep(10)
+            execute_function1()
         
     else:
         return  
@@ -102,71 +119,78 @@ def execute_function2():
                     # Aguarda um curto período para evitar cliques muito rápidos
                     sleep(0.1)
                     
-            
-            # Seleciona a obra =====================
-            pyautogui.click(1017,  632,  duration=0.1)
-            sleep(2)
-            pyautogui.click(877,  590,  duration=0.1)
-            sleep(2)
-            pyautogui.click(203,  93,  duration=0.1)
-            pyautogui.click(194,  125,  duration=0.1)
-            # Seleciona a obra =====================
-            
-            # Seleciona a data inicial ======================
-            pyautogui.click(269,  91,  duration=0.1)
-            pyautogui.write("01")
-            pyautogui.click(289,  91,  duration=0.1)
-            pyautogui.write(str(Mes))
-            pyautogui.click(312,  91,  duration=0.1)
-            pyautogui.write(str(Ano))
-            # Seleciona a data inicial ======================
+            if pyautogui.pixel(1763, 81) == (0, 34, 74) and pyautogui.pixel(1814, 966) == (0, 42, 90) and pyautogui.pixel(106, 979) == (0, 43, 91) and pyautogui.pixel(109, 95) == (0, 28, 61):
+                # Seleciona a obra =====================
+                pyautogui.click(1017,  632,  duration=0.1)
+                sleep(2)
+                pyautogui.click(877,  590,  duration=0.1)
+                sleep(2)
+                pyautogui.click(203,  93,  duration=0.1)
+                pyautogui.click(194,  125,  duration=0.1)
+                # Seleciona a obra =====================
                 
-            # Seleciona a data final ======================
-            pyautogui.click(269,  132,  duration=0.1)
-            if Mes == "01":
-                pyautogui.write("30")
-            elif Mes == "02":
-                pyautogui.write("28")
-            elif Mes == "03":
-                pyautogui.write("31")
-            elif Mes == "04":
-                pyautogui.write("30")
-            elif Mes == "05":
-                pyautogui.write("31")
-            elif Mes == "06":
-                pyautogui.write("30")
-            elif Mes == "07":
-                pyautogui.write("31")
-            elif Mes == "08":
-                pyautogui.write("31")
-            elif Mes == "09":
-                pyautogui.write("30")
-            elif Mes == "10":
-                pyautogui.write("31")
-            elif Mes == "11":
-                pyautogui.write("30")
-            elif Mes == "12":
-                pyautogui.write("31")
-            pyautogui.click(289,  132,  duration=0.1)
-            pyautogui.write(str(Mes))
-            pyautogui.click(312,  132,  duration=0.1)
-            pyautogui.write(str(Ano))
-            # Seleciona a data final ======================
-            
-            # Busca ======================
-            pyautogui.click(137, 175, duration=0.1)
-            pyautogui.press("enter")
-            # Busca ======================
-            
-            # Busca ======================
-            pyautogui.click(23, 391, duration=0.1)
-            sleep(3)
-            pyautogui.click(789, 432, duration=0.1)
-            pyautogui.click(948, 698, duration=0.1)
-            pyautogui.click(943, 542, duration=0.1)
-            pyautogui.click(857, 593, duration=0.1)
-            pyautogui.click(950, 639, duration=0.1)
-            # Busca ======================
+                # Seleciona a data inicial ======================
+                pyautogui.click(269,  91,  duration=0.1)
+                pyautogui.write("01")
+                pyautogui.click(289,  91,  duration=0.1)
+                pyautogui.write(str(Mes))
+                pyautogui.click(312,  91,  duration=0.1)
+                pyautogui.write(str(Ano))
+                # Seleciona a data inicial ======================
+                    
+                # Seleciona a data final ======================
+                pyautogui.click(269,  132,  duration=0.1)
+                if Mes == "01":
+                    pyautogui.write("30")
+                elif Mes == "02":
+                    pyautogui.write("28")
+                elif Mes == "03":
+                    pyautogui.write("31")
+                elif Mes == "04":
+                    pyautogui.write("30")
+                elif Mes == "05":
+                    pyautogui.write("31")
+                elif Mes == "06":
+                    pyautogui.write("30")
+                elif Mes == "07":
+                    pyautogui.write("31")
+                elif Mes == "08":
+                    pyautogui.write("31")
+                elif Mes == "09":
+                    pyautogui.write("30")
+                elif Mes == "10":
+                    pyautogui.write("31")
+                elif Mes == "11":
+                    pyautogui.write("30")
+                elif Mes == "12":
+                    pyautogui.write("31")
+                pyautogui.click(289,  132,  duration=0.1)
+                pyautogui.write(str(Mes))
+                pyautogui.click(312,  132,  duration=0.1)
+                pyautogui.write(str(Ano))
+                # Seleciona a data final ======================
+                
+                # Busca ======================
+                pyautogui.click(137, 175, duration=0.1)
+                pyautogui.press("enter")
+                # Busca ======================
+                
+                # Busca ======================
+                pyautogui.click(23, 391, duration=0.1)
+                sleep(3)
+                pyautogui.click(789, 432, duration=0.1)
+                pyautogui.click(948, 698, duration=0.1)
+                pyautogui.click(943, 542, duration=0.1)
+                pyautogui.click(857, 593, duration=0.1)
+                pyautogui.click(950, 639, duration=0.1)
+                # Busca ======================
+            else:
+                sleep(1)
+                pyautogui.click(857, 488)
+                pyautogui.write("84167186")
+                pyautogui.press("enter", presses=2)
+                sleep(10)
+                execute_function2()
         else:
             return
     else:
@@ -192,20 +216,28 @@ def execute_function3():
             # Aguarda um curto período para evitar cliques muito rápidos
             sleep(0.1)
             
-    pyautogui.click(918, 638, duration=0.1)
-    sleep(1)
-    pyautogui.click(1418, 612, duration=0.1)
-    sleep(1)
-    pyautogui.click(487, 68, duration=0.1)
-    pyautogui.click(890, 570, duration=0.1)
-    pyautogui.click(1043, 413, duration=0.1)
-    pyautogui.click(1881, 71, duration=0.1)
-    sleep(5)
-    pyautogui.click(25, 384, duration=0.1)
-    pyautogui.click(961, 690, duration=0.1)
-    sleep(1)
-    pyautogui.click(944, 539, duration=0.1)
-    pyautogui.click(955, 629, duration=0.1)
+    if pyautogui.pixel(1763, 81) == (0, 34, 74) and pyautogui.pixel(1814, 966) == (0, 42, 90) and pyautogui.pixel(106, 979) == (0, 43, 91) and pyautogui.pixel(109, 95) == (0, 28, 61):
+        pyautogui.click(918, 638, duration=0.1)
+        sleep(1)
+        pyautogui.click(1418, 612, duration=0.1)
+        sleep(1)
+        pyautogui.click(487, 68, duration=0.1)
+        pyautogui.click(890, 570, duration=0.1)
+        pyautogui.click(1043, 413, duration=0.1)
+        pyautogui.click(1881, 71, duration=0.1)
+        sleep(5)
+        pyautogui.click(25, 384, duration=0.1)
+        pyautogui.click(961, 690, duration=0.1)
+        sleep(1)
+        pyautogui.click(944, 539, duration=0.1)
+        pyautogui.click(955, 629, duration=0.1)
+    else:
+        sleep(1)
+        pyautogui.click(857, 488)
+        pyautogui.write("84167186")
+        pyautogui.press("enter", presses=2)
+        sleep(10)
+        execute_function2()
     
 janela = tk.Tk()
 
