@@ -238,6 +238,28 @@ def execute_function3():
         pyautogui.press("enter", presses=2)
         sleep(10)
         execute_function2()
+        
+def execute_function4():
+    
+    qt_str2 = Entry_FNC4_Qt.get()
+    qt2 = int(qt_str2) if qt_str2.isdigit() else 0
+    
+    print(qt2)
+    
+    initialP = 268
+    
+    while qt2 > 0:
+        pyautogui.click(847,initialP, duration=0.1)
+        pyautogui.click(776,896, duration=0.1)
+        sleep(1)
+        pyautogui.click(1359,555, duration=0.1)
+        pyautogui.click(1507,941, duration=0.1)
+        pyautogui.click(1340,861, duration=0.1)
+        pyautogui.click(1552,691, duration=0.1)
+        qt2 -= 1
+        initialP += 15
+        
+
     
 janela = tk.Tk()
 
@@ -417,6 +439,60 @@ separator_frame.grid(column=0, row=14, columnspan=2, pady=15)
 # Separação ---------------------------------------------------
 
 # ==================================================================
+
+# Nome da função ---------------------------------------------
+Label_FNC4_Nome=tk.Label(frame)
+Label_FNC4_Nome["font"] = tkFont.Font(family='Arial', size=10)
+Label_FNC4_Nome["fg"] = "#333333"
+Label_FNC4_Nome["justify"] = "center"
+Label_FNC4_Nome["text"] = "cota para restrição (REVIT)"
+Label_FNC4_Nome.grid(column=0, row=15, columnspan=2)
+# Nome da função ----------------------------------------------
+
+# Descriçao da função -----------------------------------------
+Label_FNC4_Desc=tk.Label(frame)
+Label_FNC4_Desc["font"] = tkFont.Font(family='Arial', size=10)
+Label_FNC4_Desc["fg"] = "#333333"
+Label_FNC4_Desc["justify"] = "center"
+Label_FNC4_Desc["text"] = "Passa cota para restrição (REVIT)"
+Label_FNC4_Desc.grid(column=0, row=16, columnspan=2)
+# Descriçao da função -----------------------------------------
+
+# Varialvel da função -----------------------------------------
+Label_FNC4_Nome_Input2=tk.Label(frame)
+Label_FNC4_Nome_Input2["font"] = tkFont.Font(family='Arial', size=10)
+Label_FNC4_Nome_Input2["fg"] = "#333333"
+Label_FNC4_Nome_Input2["justify"] = "right"
+Label_FNC4_Nome_Input2["text"] = "Quantidade:"
+Label_FNC4_Nome_Input2.grid(column=0, row=17, sticky=E, pady=5)
+
+Entry_FNC4_Qt=tk.Entry(frame)
+Entry_FNC4_Qt["font"] = tkFont.Font(family='Arial', size=10)
+Entry_FNC4_Qt["fg"] = "#333333"
+Entry_FNC4_Qt["justify"] = "center"
+Entry_FNC4_Qt["textvariable"] = "Qt"
+Entry_FNC4_Qt.bind("<Return>",  "on_change")  
+Entry_FNC4_Qt.grid(column=1, row=17, sticky=W, pady=5)
+# Varialvel da função -----------------------------------------
+
+# Butão da função ---------------------------------------------
+Buton_FNC4=tk.Button(frame)
+Buton_FNC4["bg"] = "#f0f0f0"
+Buton_FNC4["font"] = tkFont.Font(family='Arial', size=10)
+Buton_FNC4["fg"] = "#000000"
+Buton_FNC4["justify"] = "center"
+Buton_FNC4["text"] = "Executar"
+Buton_FNC4["command"] = execute_function4
+Buton_FNC4["cursor"] = "target"
+Buton_FNC4.grid(column=0, row=18, columnspan=2, pady=5)
+# Butão da função ---------------------------------------------
+
+# ==================================================================
+
+# Separação ---------------------------------------------------
+separator_frame = Frame(frame, height=2, width=300, bd=1, relief=SUNKEN, bg="black")
+separator_frame.grid(column=0, row=19, columnspan=2, pady=15)
+# Separação ---------------------------------------------------
 
 # Configure o frame para centralizar os widgets no eixo x
 for i in range(frame.grid_size()[0]):  # Loop through columns in the frame
